@@ -27,14 +27,15 @@ export default function Contact() {
 
     try {
       // EmailJS configuration from config file
-      const { serviceId, templateId, publicKey } = emailjsConfig;
+      const { serviceId, templateId, thankYouTemplateId, publicKey } = emailjsConfig;
       
       // Check if EmailJS is properly configured
       if (serviceId === 'YOUR_SERVICE_ID' || templateId === 'YOUR_TEMPLATE_ID' || publicKey === 'YOUR_PUBLIC_KEY') {
         throw new Error('EmailJS is not configured. Please check the setup guide.');
       }
 
-      const templateParams = {
+      // Template parameters for the main email (to you)
+      const mainTemplateParams = {
         from_name: formData.name,
         from_email: formData.email,
         subject: formData.subject,
@@ -42,11 +43,32 @@ export default function Contact() {
         to_name: 'Milan Bhimani', // Your name
       };
 
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      // Send the main email to you
+      await emailjs.send(serviceId, templateId, mainTemplateParams, publicKey);
+      
+      // Send thank you email to the user (if thank you template is configured)
+      if (thankYouTemplateId && thankYouTemplateId !== 'YOUR_THANKYOU_TEMPLATE_ID') {
+        const thankYouTemplateParams = {
+          user_name: formData.name,
+          user_email: formData.email,
+          user_subject: formData.subject,
+          reply_to_name: 'Milan Bhimani',
+          reply_to_email: 'mbhimani0410@gmail.com',
+          to_email: formData.email // This should be the user's email for the thank you message
+        };
+
+        try {
+          await emailjs.send(serviceId, thankYouTemplateId, thankYouTemplateParams, publicKey);
+          console.log('Thank you email sent successfully');
+        } catch (thankYouError) {
+          console.warn('Main email sent, but thank you email failed:', thankYouError);
+          // Don't throw error here - main email was successful
+        }
+      }
       
       setStatus({
         type: 'success',
-        message: 'Thank you for your message! I\'ll get back to you soon.'
+        message: 'Thank you for your message! I\'ve received it and will get back to you soon. You should also receive a confirmation email shortly.'
       });
       
       // Reset form
