@@ -5,6 +5,7 @@ import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
+import EmailJSTest from "./components/EmailJSTest";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Projects />
         <Contact />
       </main>
+      <EmailJSTest />
     </div>
   );
 }

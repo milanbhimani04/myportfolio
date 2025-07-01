@@ -105,7 +105,9 @@ export default function About() {
           <div className="space-y-8">
             <div className="space-y-6">
               <h3 className="text-3xl font-bold text-gray-900">
-                Hello! I'm Milan Bhimani 👋
+                Hello! I'm <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                  Milan Bhimani
+                </span> <span className="animate-wave">👋</span>
               </h3>
 
               <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
