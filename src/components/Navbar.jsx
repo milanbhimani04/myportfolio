@@ -19,7 +19,7 @@ export default function Navbar() {
                     {/* Logo */}
                     <div className="flex-shrink-0">
                         <a href="#home" className="text-2xl font-bold text-gray-900">
-                            <span className='text-blue-700'>Milan</span>Bhimani
+                            <span className='text-blue-700'>Milan </span>Bhimani
                         </a>
                     </div>
 

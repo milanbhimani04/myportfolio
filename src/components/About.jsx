@@ -86,7 +86,7 @@ export default function About() {
                     <p className="text-blue-200 text-sm mt-2">Ahmedabad, Gujarat</p>
                   </div>
                 </div>
-                
+
                 {/* Floating Elements */}
                 <div className="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg animate-bounce">
                   <span className="text-2xl">👨‍💻</span>
@@ -94,7 +94,7 @@ export default function About() {
                 <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-green-400 rounded-full flex items-center justify-center shadow-lg">
                   <span className="text-xl">🚀</span>
                 </div>
-                
+
                 {/* Background Decoration */}
                 <div className="absolute -z-10 top-8 left-8 w-72 h-72 bg-blue-200 rounded-3xl opacity-20"></div>
               </div>
@@ -107,25 +107,25 @@ export default function About() {
               <h3 className="text-3xl font-bold text-gray-900">
                 Hello! I'm Milan Bhimani 👋
               </h3>
-              
+
               <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  I'm a passionate IT professional with hands-on experience in both frontend and backend development. 
+                  I'm a passionate IT professional with hands-on experience in both frontend and backend development.
                   My journey in web development has been driven by curiosity and a desire to create meaningful digital experiences.
                 </p>
-                
+
                 <p>
-                  I specialize in <span className="font-semibold text-blue-600">Python (Flask)</span>, 
-                  <span className="font-semibold text-blue-600"> PHP</span>, 
-                  <span className="font-semibold text-blue-600"> Laravel</span>, 
-                  <span className="font-semibold text-blue-600"> MySQL</span>, 
-                  <span className="font-semibold text-blue-600"> React</span>, and more. 
+                  I specialize in <span className="font-semibold text-blue-600">Python (Flask)</span>,
+                  <span className="font-semibold text-blue-600"> PHP</span>,
+                  <span className="font-semibold text-blue-600"> Laravel</span>,
+                  <span className="font-semibold text-blue-600"> MySQL</span>,
+                  <span className="font-semibold text-blue-600"> React</span>, and more.
                   Each project is an opportunity to learn something new and push the boundaries of what's possible.
                 </p>
-                
+
                 <p>
-                  I thrive in collaborative environments and continuously strive to enhance my technical skill set. 
-                  My goal is to create innovative web solutions that not only meet requirements but exceed expectations 
+                  I thrive in collaborative environments and continuously strive to enhance my technical skill set.
+                  My goal is to create innovative web solutions that not only meet requirements but exceed expectations
                   and make a real impact on users' lives.
                 </p>
               </div>
@@ -169,7 +169,7 @@ export default function About() {
             <h3 className="text-3xl font-bold text-gray-900 mb-4">My Core Values</h3>
             <p className="text-lg text-gray-600">The principles that guide my work and professional approach</p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
               <div
@@ -190,38 +190,14 @@ export default function About() {
             <h3 className="text-3xl font-bold text-gray-900 mb-4">My Journey</h3>
             <p className="text-lg text-gray-600">Key milestones in my development career</p>
           </div>
-          
+
           <div className="max-w-3xl mx-auto">
             <div className="relative">
               {/* Timeline line */}
               <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-blue-300 transform md:-translate-x-0.5"></div>
-              
+
               <div className="space-y-8">
                 {/* Timeline Item 1 */}
-                <div className="relative flex items-center">
-                  <div className="absolute left-2 md:left-1/2 w-4 h-4 bg-blue-600 rounded-full transform md:-translate-x-2"></div>
-                  <div className="ml-12 md:ml-0 md:w-1/2 md:pr-8">
-                    <div className="bg-white p-6 rounded-lg shadow-sm">
-                      <h4 className="font-bold text-gray-900 mb-2">Started Web Development Journey</h4>
-                      <p className="text-gray-600 text-sm">Began learning programming fundamentals and web technologies</p>
-                      <span className="text-blue-600 text-sm font-medium">2022</span>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Timeline Item 2 */}
-                <div className="relative flex items-center md:justify-end">
-                  <div className="absolute left-2 md:left-1/2 w-4 h-4 bg-green-600 rounded-full transform md:-translate-x-2"></div>
-                  <div className="ml-12 md:ml-0 md:w-1/2 md:pl-8">
-                    <div className="bg-white p-6 rounded-lg shadow-sm">
-                      <h4 className="font-bold text-gray-900 mb-2">First Internship at Tusker AI</h4>
-                      <p className="text-gray-600 text-sm">Developed AI-powered traffic surveillance system using Python Flask</p>
-                      <span className="text-green-600 text-sm font-medium">Jan 2025</span>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Timeline Item 3 */}
                 <div className="relative flex items-center">
                   <div className="absolute left-2 md:left-1/2 w-4 h-4 bg-purple-600 rounded-full transform md:-translate-x-2"></div>
                   <div className="ml-12 md:ml-0 md:w-1/2 md:pr-8">
@@ -229,6 +205,31 @@ export default function About() {
                       <h4 className="font-bold text-gray-900 mb-2">Joined Phoenix Solutions</h4>
                       <p className="text-gray-600 text-sm">Currently working as a Web Developer, building modern web applications</p>
                       <span className="text-purple-600 text-sm font-medium">June 2025 - Present</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Timeline Item 2 */}
+                <div className="relative flex items-center md:justify-end">
+                  <div className="absolute left-2 md:left-1/2 w-4 h-4 bg-green-600 rounded-full transform md:-translate-x-2"></div>
+                  <div className="ml-12 md:ml-0 md:w-1/2 md:pl-8">
+                    <div className="bg-white p-6 rounded-lg shadow-sm">
+                      <h4 className="font-bold text-gray-900 mb-2">First Internship at Tusker AI</h4>
+                      <p className="text-gray-600 text-sm">Developed AI-powered traffic surveillance system using Python Flask</p>
+                      <span className="text-green-600 text-sm font-medium">Jan 2025 - May 2025</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Timeline Item 3 */}
+
+                <div className="relative flex items-center">
+                  <div className="absolute left-2 md:left-1/2 w-4 h-4 bg-blue-600 rounded-full transform md:-translate-x-2"></div>
+                  <div className="ml-12 md:ml-0 md:w-1/2 md:pr-8">
+                    <div className="bg-white p-6 rounded-lg shadow-sm">
+                      <h4 className="font-bold text-gray-900 mb-2">Started Web Development Journey</h4>
+                      <p className="text-gray-600 text-sm">Began learning programming fundamentals and web technologies</p>
+                      <span className="text-blue-600 text-sm font-medium">2022</span>
                     </div>
                   </div>
                 </div>
