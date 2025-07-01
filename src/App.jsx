@@ -19,7 +19,7 @@ function App() {
         <Projects />
         <Contact />
       </main>
-      <EmailJSTest />
+      {/* <EmailJSTest /> */}
     </div>
   );
 }
