@@ -1,27 +1,11 @@
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Experience from "./components/Experience";
-import Contact from "./components/Contact";
-import Navbar from "./components/Navbar";
-import EmailJSTest from "./components/EmailJSTest";
+// This file is no longer the main entry point
+// The routing is now handled by src/router/index.jsx
+// and the main entry point is src/main.jsx
 
-function App() {
+export default function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Contact />
-      </main>
-      {/* <EmailJSTest /> */}
+    <div>
+      <h1>This component is no longer used. Please check src/main.jsx and src/router/index.jsx</h1>
     </div>
   );
 }
-
-export default App;

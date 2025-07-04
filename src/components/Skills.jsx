@@ -1,4 +1,11 @@
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
+
 export default function Skills() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   const skillCategories = [
     {
       title: "Frontend",
@@ -32,11 +39,20 @@ export default function Skills() {
     }
   ];
 
+  const technicalSkills = [
+    { name: "React.js", level: 85, color: "primary" },
+    { name: "Python/Flask", level: 80, color: "green" },
+    { name: "PHP/Laravel", level: 75, color: "purple" },
+    { name: "MySQL", level: 80, color: "orange" },
+    { name: "JavaScript", level: 78, color: "yellow" },
+    { name: "Git/Version Control", level: 85, color: "red" }
+  ];
+
   const getColorClasses = (color) => {
     const colorMap = {
-      blue: "bg-blue-50 border-blue-200 text-blue-900",
+      blue: "bg-primary-50 border-primary-200 text-primary-900",
       green: "bg-green-50 border-green-200 text-green-900",
-      purple: "bg-purple-50 border-purple-200 text-purple-900",
+      purple: "bg-accent-50 border-accent-200 text-accent-900",
       orange: "bg-orange-50 border-orange-200 text-orange-900",
       pink: "bg-pink-50 border-pink-200 text-pink-900"
     };
@@ -45,120 +61,306 @@ export default function Skills() {
 
   const getSkillBadgeColor = (color) => {
     const colorMap = {
-      blue: "bg-blue-100 text-blue-800",
+      blue: "bg-primary-100 text-primary-800",
       green: "bg-green-100 text-green-800",
-      purple: "bg-purple-100 text-purple-800",
+      purple: "bg-accent-100 text-accent-800",
       orange: "bg-orange-100 text-orange-800",
       pink: "bg-pink-100 text-pink-800"
     };
     return colorMap[color] || colorMap.blue;
   };
 
-  return (
-    <section id="skills" className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Skills & Technologies</h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            A comprehensive overview of my technical expertise and professional capabilities
-          </p>
-        </div>
+  const getProgressBarColor = (color) => {
+    const colorMap = {
+      primary: "bg-primary-600",
+      green: "bg-green-600",
+      purple: "bg-accent-600",
+      orange: "bg-orange-600",
+      yellow: "bg-yellow-600",
+      red: "bg-red-600"
+    };
+    return colorMap[color] || colorMap.primary;
+  };
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  const getProgressTextColor = (color) => {
+    const colorMap = {
+      primary: "text-primary-600",
+      green: "text-green-600",
+      purple: "text-accent-600",
+      orange: "text-orange-600",
+      yellow: "text-yellow-600",
+      red: "text-red-600"
+    };
+    return colorMap[color] || colorMap.primary;
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: 'easeOut'
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { y: 50, opacity: 0, scale: 0.9 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: 'easeOut'
+      }
+    },
+    hover: {
+      y: -8,
+      scale: 1.02,
+      transition: { duration: 0.2 }
+    }
+  };
+
+  const skillBadgeVariants = {
+    hidden: { scale: 0, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        ease: 'easeOut'
+      }
+    },
+    hover: {
+      scale: 1.1,
+      transition: { duration: 0.2 }
+    }
+  };
+
+  const progressBarVariants = {
+    hidden: { width: 0 },
+    visible: (level) => ({
+      width: `${level}%`,
+      transition: {
+        duration: 1.5,
+        ease: 'easeOut',
+        delay: 0.5
+      }
+    })
+  };
+
+  return (
+    <section id="skills" className="section-padding bg-secondary-50" ref={ref}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="text-center mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          <motion.h2 className="heading-2 text-secondary-900 mb-4" variants={itemVariants}>
+            Skills & Technologies
+          </motion.h2>
+          <motion.div 
+            className="w-20 h-1 bg-primary-600 mx-auto mb-4"
+            variants={itemVariants}
+          />
+          <motion.p 
+            className="body-large text-secondary-600 max-w-2xl mx-auto"
+            variants={itemVariants}
+          >
+            A comprehensive overview of my technical expertise and professional capabilities
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           {skillCategories.map((category, index) => (
-            <div
+            <motion.div
               key={index}
-              className={`p-6 rounded-xl border-2 ${getColorClasses(category.color)} hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1`}
+              className={`p-6 rounded-xl border-2 ${getColorClasses(category.color)} card-hover cursor-pointer`}
+              variants={cardVariants}
+              whileHover="hover"
+              custom={index}
             >
               <div className="flex items-center mb-4">
-                <span className="text-3xl mr-3">{category.icon}</span>
+                <motion.span 
+                  className="text-3xl mr-3"
+                  whileHover={{ scale: 1.2, rotate: 10 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {category.icon}
+                </motion.span>
                 <h3 className="text-xl font-bold">{category.title}</h3>
               </div>
               
-              <div className="flex flex-wrap gap-2">
+              <motion.div 
+                className="flex flex-wrap gap-2"
+                variants={containerVariants}
+              >
                 {category.skills.map((skill, skillIndex) => (
-                  <span
+                  <motion.span
                     key={skillIndex}
-                    className={`px-3 py-1 rounded-full text-sm font-medium ${getSkillBadgeColor(category.color)} transition-all duration-200 hover:scale-105`}
+                    className={`px-3 py-1 rounded-full text-sm font-medium ${getSkillBadgeColor(category.color)} cursor-pointer`}
+                    variants={skillBadgeVariants}
+                    whileHover="hover"
+                    custom={skillIndex}
                   >
                     {skill}
-                  </span>
+                  </motion.span>
                 ))}
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Technical Proficiency */}
-        <div className="mt-16">
-          <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">Technical Proficiency</h3>
+        <motion.div
+          className="card p-8"
+          variants={itemVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          <motion.h3 
+            className="heading-3 text-center text-secondary-900 mb-8"
+            variants={itemVariants}
+          >
+            Technical Proficiency
+          </motion.h3>
+          
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <div>
-                <div className="flex justify-between mb-2">
-                  <span className="font-medium text-gray-700">React.js</span>
-                  <span className="text-blue-600 font-semibold">85%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div className="bg-blue-600 h-2 rounded-full" style={{width: '85%'}}></div>
-                </div>
-              </div>
-              
-              <div>
-                <div className="flex justify-between mb-2">
-                  <span className="font-medium text-gray-700">Python/Flask</span>
-                  <span className="text-green-600 font-semibold">80%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div className="bg-green-600 h-2 rounded-full" style={{width: '80%'}}></div>
-                </div>
-              </div>
-              
-              <div>
-                <div className="flex justify-between mb-2">
-                  <span className="font-medium text-gray-700">PHP/Laravel</span>
-                  <span className="text-purple-600 font-semibold">75%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div className="bg-purple-600 h-2 rounded-full" style={{width: '75%'}}></div>
-                </div>
-              </div>
-            </div>
+            <motion.div 
+              className="space-y-6"
+              variants={containerVariants}
+            >
+              {technicalSkills.slice(0, 3).map((skill, index) => (
+                <motion.div key={index} variants={itemVariants}>
+                  <div className="flex justify-between mb-2">
+                    <span className="font-medium text-secondary-700">{skill.name}</span>
+                    <motion.span 
+                      className={`font-semibold ${getProgressTextColor(skill.color)}`}
+                      initial={{ opacity: 0 }}
+                      animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                      transition={{ delay: 0.5 + index * 0.1 }}
+                    >
+                      {skill.level}%
+                    </motion.span>
+                  </div>
+                  <div className="w-full bg-secondary-200 rounded-full h-3 overflow-hidden">
+                    <motion.div
+                      className={`h-3 rounded-full ${getProgressBarColor(skill.color)} relative`}
+                      variants={progressBarVariants}
+                      custom={skill.level}
+                      initial="hidden"
+                      animate={isInView ? "visible" : "hidden"}
+                    >
+                      <motion.div
+                        className="absolute inset-0 bg-white/20 rounded-full"
+                        animate={{
+                          x: ['-100%', '100%'],
+                        }}
+                        transition={{
+                          duration: 2,
+                          ease: 'easeInOut',
+                          repeat: Infinity,
+                          repeatDelay: 3,
+                          delay: 1 + index * 0.2
+                        }}
+                      />
+                    </motion.div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
             
-            <div className="space-y-4">
-              <div>
-                <div className="flex justify-between mb-2">
-                  <span className="font-medium text-gray-700">MySQL</span>
-                  <span className="text-orange-600 font-semibold">80%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div className="bg-orange-600 h-2 rounded-full" style={{width: '80%'}}></div>
-                </div>
-              </div>
-              
-              <div>
-                <div className="flex justify-between mb-2">
-                  <span className="font-medium text-gray-700">JavaScript</span>
-                  <span className="text-yellow-600 font-semibold">78%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div className="bg-yellow-600 h-2 rounded-full" style={{width: '78%'}}></div>
-                </div>
-              </div>
-              
-              <div>
-                <div className="flex justify-between mb-2">
-                  <span className="font-medium text-gray-700">Git/Version Control</span>
-                  <span className="text-red-600 font-semibold">85%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div className="bg-red-600 h-2 rounded-full" style={{width: '85%'}}></div>
-                </div>
-              </div>
-            </div>
+            <motion.div 
+              className="space-y-6"
+              variants={containerVariants}
+            >
+              {technicalSkills.slice(3).map((skill, index) => (
+                <motion.div key={index} variants={itemVariants}>
+                  <div className="flex justify-between mb-2">
+                    <span className="font-medium text-secondary-700">{skill.name}</span>
+                    <motion.span 
+                      className={`font-semibold ${getProgressTextColor(skill.color)}`}
+                      initial={{ opacity: 0 }}
+                      animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                      transition={{ delay: 0.8 + index * 0.1 }}
+                    >
+                      {skill.level}%
+                    </motion.span>
+                  </div>
+                  <div className="w-full bg-secondary-200 rounded-full h-3 overflow-hidden">
+                    <motion.div
+                      className={`h-3 rounded-full ${getProgressBarColor(skill.color)} relative`}
+                      variants={progressBarVariants}
+                      custom={skill.level}
+                      initial="hidden"
+                      animate={isInView ? "visible" : "hidden"}
+                    >
+                      <motion.div
+                        className="absolute inset-0 bg-white/20 rounded-full"
+                        animate={{
+                          x: ['-100%', '100%'],
+                        }}
+                        transition={{
+                          duration: 2,
+                          ease: 'easeInOut',
+                          repeat: Infinity,
+                          repeatDelay: 3,
+                          delay: 1.3 + index * 0.2
+                        }}
+                      />
+                    </motion.div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
+
+        {/* Skills Highlight */}
+        <motion.div
+          className="mt-16 text-center"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          <motion.div 
+            className="inline-flex items-center space-x-2 bg-primary-50 px-6 py-3 rounded-full border border-primary-200"
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
+            <motion.span
+              animate={{ rotate: 360 }}
+              transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
+            >
+              ⚡
+            </motion.span>
+            <span className="text-primary-700 font-medium">
+              Always learning and exploring new technologies
+            </span>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

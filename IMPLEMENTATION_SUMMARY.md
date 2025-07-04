@@ -26,7 +26,7 @@ I've successfully set up a **dual email system** for your portfolio contact form
 
 Your `.env` file already has the thank you template ID:
 ```env
-VITE_EMAILJS_THANKYOU_TEMPLATE_ID=template_en0tkby
+VITE_EMAILJS_THANKYOU_TEMPLATE_ID=
 ```
 
 ## 🎯 Key Features
@@ -67,10 +67,10 @@ VITE_EMAILJS_THANKYOU_TEMPLATE_ID=template_en0tkby
 ## 📊 Current Status
 
 Based on your `.env` file, you have:
-- ✅ Main email service configured (`service_plt6xir`)
-- ✅ Main template configured (`template_8n2mtaz`)
-- ✅ Thank you template configured (`template_en0tkby`)
-- ✅ Public key configured (`TKujNUQpJ-AHqO-3h`)
+- ✅ Main email service configured (``)
+- ✅ Main template configured (``)
+- ✅ Thank you template configured (``)
+- ✅ Public key configured (``)
 
 ## 🎨 User Experience Improvements
 

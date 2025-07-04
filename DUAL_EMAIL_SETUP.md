@@ -15,17 +15,17 @@ Your `.env` file should have these variables:
 
 ```env
 # Main contact form template (receives messages)
-VITE_EMAILJS_SERVICE_ID=service_plt6xir
-VITE_EMAILJS_TEMPLATE_ID=template_8n2mtaz
-VITE_EMAILJS_PUBLIC_KEY=TKujNUQpJ-AHqO-3h
+VITE_EMAILJS_SERVICE_ID=
+VITE_EMAILJS_TEMPLATE_ID=
+VITE_EMAILJS_PUBLIC_KEY=
 
 # Auto-reply template (sends confirmation to sender)
-VITE_EMAILJS_THANKYOU_TEMPLATE_ID=template_en0tkby
+VITE_EMAILJS_THANKYOU_TEMPLATE_ID=
 ```
 
 ## Email Templates Setup
 
-### 1. Main Template (template_8n2mtaz)
+### 1. Main Template ()
 **Purpose**: Receives user messages
 **Sent to**: Your email (mbhimani0410@gmail.com)
 **Variables used**:
@@ -54,7 +54,7 @@ Best regards,
 Your Portfolio Contact Form
 ```
 
-### 2. Thank You Template (template_en0tkby)
+### 2. Thank You Template ()
 **Purpose**: Sends confirmation to users
 **Sent to**: User's email address
 **Variables used**:
