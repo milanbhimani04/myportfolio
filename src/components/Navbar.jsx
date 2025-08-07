@@ -151,10 +151,13 @@ export default function Navbar() {
                         animate="animate"
                         whileHover="hover"
                     >
-                        <Link to="/" className="text-2xl font-bold text-secondary-900">
+                        {/* <Link to="/" className="text-2xl font-bold text-secondary-900"> */}
                             {/* <span className="text-gradient">MB</span> */}
-                           <link rel="icon" href="/favicon.png" type="image/png" />
-                        </Link>
+                           {/* <link rel="icon" href="src/assets/favicon.png" type="image/png" /> */}
+                        <link rel="icon" type="image/svg+xml" href="src/assets/favicon.png" />
+
+
+                        {/* </Link> */}
                     </motion.div>
 
                     {/* Desktop Navigation */}
