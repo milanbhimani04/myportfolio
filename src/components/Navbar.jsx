@@ -152,7 +152,8 @@ export default function Navbar() {
                         whileHover="hover"
                     >
                         <Link to="/" className="text-2xl font-bold text-secondary-900">
-                            <span className="text-gradient">MB</span>
+                            {/* <span className="text-gradient">MB</span> */}
+                            <img src="src/assets/favicon.png" alt="logo" />
                         </Link>
                     </motion.div>
 
