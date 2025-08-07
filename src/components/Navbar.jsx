@@ -153,7 +153,7 @@ export default function Navbar() {
                     >
                         <Link to="/" className="text-2xl font-bold text-secondary-900">
                             {/* <span className="text-gradient">MB</span> */}
-                            <img src="src/assets/favicon.png" alt="logo" />
+                           <link rel="icon" href="/favicon.png" type="image/png" />
                         </Link>
                     </motion.div>
 
