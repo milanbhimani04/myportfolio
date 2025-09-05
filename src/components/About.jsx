@@ -58,7 +58,7 @@ export default function About() {
 
   const timeline = [
     {
-      title: "Joined Phoenix Solutions",
+      title: "Joined ePhoenix Solutions",
       description: "Currently working as a Web Developer, building modern web applications",
       date: "June 2025 - Present",
       color: "purple"

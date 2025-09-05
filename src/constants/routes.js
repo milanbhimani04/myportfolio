@@ -53,7 +53,7 @@ export const PAGE_DESCRIPTIONS = {
     [ROUTES.HOME]: 'Milan Bhimani - Full Stack Developer specializing in React, Python, PHP, and modern web technologies. Building innovative web solutions.',
     [ROUTES.ABOUT]: 'Learn more about Milan Bhimani, a passionate Full Stack Developer with experience in modern web technologies and innovative solutions.',
     [ROUTES.SKILLS]: "Explore Milan Bhimani's technical skills including React.js, Python, PHP, Laravel, MySQL, and other modern web development technologies.",
-    [ROUTES.EXPERIENCE]: "Discover Milan Bhimani's professional experience as a Full Stack Developer, including work at Phoenix Solutions and Tusker AI.",
+    [ROUTES.EXPERIENCE]: "Discover Milan Bhimani's professional experience as a Full Stack Developer, including work at ePhoenix Solutions and Tusker AI.",
     [ROUTES.PROJECTS]: "View Milan Bhimani's portfolio of projects including DriveTracker, LENSATION, and SAHAS - showcasing full-stack development expertise.",
     [ROUTES.CONTACT]: 'Get in touch with Milan Bhimani for collaboration opportunities, project discussions, or professional inquiries.',
     [ROUTES.PRIVACY]: "Privacy Policy for Milan Bhimani's portfolio website. Learn how personal information is collected, used, and protected.",

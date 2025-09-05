@@ -9,7 +9,7 @@ export default function Experience() {
   const experiences = [
     {
       title: "Web Developer",
-      company: "Phoenix Solutions",
+      company: "ePhoenix Solutions",
       period: "June 2025 – Present",
       type: "Full-time",
       description: [
