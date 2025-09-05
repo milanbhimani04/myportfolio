@@ -178,7 +178,7 @@ export default function PrivacyPolicy() {
                     <strong>Phone:</strong> +91 84016 46441
                   </p>
                   <p className="text-secondary-700">
-                    <strong>Location:</strong> Ahmedabad, Gujarat, India
+                    <strong>Location:</strong> Surat, Gujarat, India
                   </p>
                 </div>
               </motion.section>

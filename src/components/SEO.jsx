@@ -15,7 +15,7 @@ export default function SEO({ title, description, keywords, image }) {
     const pageKeywords =
         keywords || 'Milan Bhimani, Full Stack Developer, React, Python, PHP, Laravel, Web Development, Portfolio';
     const pageImage = image || '/src/assets/man.png';
-    const siteUrl = 'https://milanbhimani.dev';
+    const siteUrl = 'https://milanbhimani';
     const currentUrl = `${siteUrl}${location.pathname}`;
 
     useEffect(() => {
@@ -84,7 +84,7 @@ export default function SEO({ title, description, keywords, image }) {
             ],
             address: {
                 "@type": "PostalAddress",
-                addressLocality: "Ahmedabad",
+                addressLocality: "Surat",
                 addressRegion: "Gujarat",
                 addressCountry: "India",
             },

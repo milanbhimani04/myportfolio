@@ -120,7 +120,7 @@ export default function Contact() {
         </svg>
       ),
       title: "Location",
-      value: "Ahmedabad, Gujarat, India",
+      value: "Surat, Gujarat, India",
       link: null,
       color: "purple"
     }

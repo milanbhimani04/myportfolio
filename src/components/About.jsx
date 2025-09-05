@@ -226,7 +226,7 @@ export default function About() {
                   <div className="text-center px-6">
                     <h3 className="text-xl font-semibold mb-2">Milan Bhimani</h3>
                     <p className="text-primary-100">Full Stack Developer</p>
-                    <p className="text-primary-200 text-sm mt-2">Ahmedabad, Gujarat</p>
+                    <p className="text-primary-200 text-sm mt-2">Surat, Gujarat</p>
                   </div>
                   
                   {/* Background decoration */}

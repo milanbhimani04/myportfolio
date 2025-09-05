@@ -133,7 +133,7 @@ const { navigateToContact } = useNavigation();
 const contactInfo = [
   {
     icon: LocationIcon,
-    text: "Ahmedabad, Gujarat, India"
+    text: "Surat, Gujarat, India"
   },
   {
     icon: EmailIcon,
