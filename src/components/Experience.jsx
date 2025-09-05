@@ -39,9 +39,9 @@ export default function Experience() {
   ];
 
   const stats = [
-    { number: "2+", label: "Years Experience", color: "primary" },
-    { number: "5+", label: "Projects Completed", color: "green" },
-    { number: "8+", label: "Technologies", color: "purple" },
+    { number: "1+", label: "Years Experience", color: "primary" },
+    { number: "3+", label: "Projects Completed", color: "green" },
+    { number: "5+", label: "Technologies", color: "purple" },
     { number: "100%", label: "Commitment", color: "orange" }
   ];
 

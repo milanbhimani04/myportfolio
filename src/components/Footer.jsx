@@ -262,7 +262,7 @@ export default function Footer() {
               variants={itemVariants}
             >
               <p>
-                © {currentYear} Milan Bhimani. All rights reserved. 
+                © 2024 Milan Bhimani. All rights reserved. 
               </p>
             </motion.div>
 

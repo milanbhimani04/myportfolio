@@ -13,12 +13,12 @@ export default function About() {
       icon: "🚀"
     },
     {
-      number: "5+",
+      number: "3+",
       label: "Projects Completed",
       icon: "💼"
     },
     {
-      number: "8+",
+      number: "5+",
       label: "Technologies Mastered",
       icon: "⚡"
     },

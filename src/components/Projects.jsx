@@ -64,7 +64,7 @@ export default function Projects() {
     { number: "3", label: "Major Projects", color: "primary" },
     { number: "100%", label: "Success Rate", color: "green" },
     { number: "5+", label: "Technologies Used", color: "purple" },
-    { number: "2+", label: "Years Development", color: "orange" }
+    { number: "1+", label: "Years Development", color: "orange" }
   ];
 
   const getColorClasses = (color) => {
